@@ -39,7 +39,7 @@ function AddToCart( plant )
 
     let div = document.createElement('div');
     let btn = document.createElement('button');
-    btn.innerText = 'Remove';
+    btn.innerText = 'X';
     btn.onclick =  function(e) { RemoveFromCart(e); };
     
     div.innerHTML = `
@@ -49,6 +49,7 @@ function AddToCart( plant )
         </div>
         `;
     div.appendChild(btn);
+    div.classList.add('cart-item');
     
     cart_items.appendChild(div);
     
@@ -144,7 +145,7 @@ async function FetchTrees(id)
 
         let div2_title = document.createElement('div');
         div2_title.innerText= plant.name;
-        div2_title.classList.add('head2');
+        div2_title.classList.add('head-2');
 
         let div2_des = document.createElement('div');
         div2_des.innerText= plant.description.substring(0, 70) + '...';
@@ -166,7 +167,7 @@ async function FetchTrees(id)
 
         let div2_cart = document.createElement('button');
         div2_cart.innerText= 'Add to Cart';
-        div2_cart.classList.add('btn-cart');
+        div2_cart.classList.add('button-2');
         div2_cart.onclick= function() { AddToCart(plant); };
         
 

@@ -20,21 +20,22 @@
         </div>
 
         <div>
-            <span>About</span>
-            <span>Gallery</span>
-            <span>Plant a Tree</span>
+            <a href="#about" class="nav-link" >About</a>
+            <a href="#gallery" class="nav-link" >Gallery</a>
+            <a href="#plant" class="nav-link" >Plant a Tree</a>
+            
         </div>
 
-        <div>
+        <div class="button-1" >
             Plant a Tree
         </div>
     </nav>
 
 
     <div id="banner" >
-        <div>Plant a Tree, Grow a Future</div>
-        <div>Join our mission to plant 1 million trees and make the earth greener for future generations </div>
-        <div>Get Involved</div>
+        <div style="font-weight: 600;" >Plant a Tree, Grow a Future</div>
+        <div style="font-size: 1.3rem;" >Join our mission to plant 1 million trees and make the earth greener for future generations </div>
+        <div class="button-1" style="font-size: 1.3rem;" >Get Involved</div>
     </div>
 
 
@@ -65,7 +66,7 @@
     <div id="about" >
         <div class="head-1" >About The Campaign</div>
         <div style="display: grid; grid-template-columns: repeat(2, 1fr); height: 10rem;" >
-            <div style="height: 100%; background-image: url(./assets/about.png); background-position: center; background-size: cover;" ></div>
+            <div style="height: 100%; background-image: url(./assets/about.png); background-position: center; background-size: contain; background-repeat: no-repeat;" ></div>
             <div> 
                 <div>
                     Green Earth is a global tree plantation initiative dedicated to fighting climate change. Since our start, we’ve planted over 500,000 trees worldwide. By joining our campaign, you help restore forests, create habitats for wildlife, and combat global warming.
@@ -79,38 +80,39 @@
         </div>
     </div>
 
-    <div id="impact" >  
+    <div id="impact" style="background-color: var(--color6);" >  
         <div class="head-1" > Our Impact </div>
         <div style="display: flex; justify-content: space-around; align-items: center;" >
-            <div>
-                <div>500,000+</div>
-                <div>Trees Planted</div>
+            <div style="color: var(--color3); background-color: var(--color1); padding: 1rem;" >
+                <span style="font-size: 3rem; font-weight: 600;" >50,000+</span><br>
+                Trees Planted
             </div>
-            <div>
-                <div>120+</div>
-                <div>Communities Supported</div>
+            <div style="color: var(--color3); background-color: var(--color1); padding: 1rem;" >
+                <span style="font-size: 3rem; font-weight: 600;" >120+</span><br>
+                Communities Supported
             </div>
-            <div>
-                <div>50+</div>
-                <div>Countries Reached</div>
+            <div style="color: var(--color3); background-color: var(--color1); padding: 1rem;" >
+                <span style="font-size: 3rem; font-weight: 600;" >30+</span><br>
+                Countries Reached
+                
             </div>
         </div>
     </div>
 
-    <div id="plant" >
+    <div id="plant" style="background-color: var(--color5); color: var(--color1); display: flex; justify-content: center; align-items: center; gap: 2rem; flex-direction: column;" >
         <div class="head-1" > Plant a Tree </div>
-        <div style="display: flex; flex-direction: column;" >
-            <input type="text" id="name" placeholder="Your Name" />
-            <input type="text" id="email" placeholder="Your Email" />
-            <select id="tree-type" >
+        <div style="display: flex; flex-direction: column; width: 80%; max-width: 30rem; padding: 1rem; gap: 1rem; background-color: var(--color3);" >
+            <input type="text" style="padding: .5rem;" id="name" placeholder="Your Name" />
+            <input type="text" style="padding: .5rem;" id="email" placeholder="Your Email" />
+            <select id="tree-type" style="padding: .5rem;" >
                 <option value="" disabled selected>5</option>
                 <option value="" disabled selected>5</option>
             </select>
-            <button onclick="PlantTree()" >Plant Now</button>
+            <button onclick="PlantTree()" class="button-1" >Donate Now</button>
         </div>
     </div>
 
-    <footer>
+    <footer style="background-color: var(--color4); color:  var(--color1); padding: 1rem; text-align: center;" >
         © 2025 Green Earth. All Rights Reserved.
     </footer>
 
