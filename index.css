@@ -1,14 +1,12 @@
 
 :root {
-    --color1: #3498db;
-    --color2: #2ecc71;
+    --color1: #ffffff;
+    --color2: #000000;
     --color3: #15803D;
     --color4: #14532D;
     --color5: #166534;
-    --color6: #1abc9c;
-    --color7: #34495e;
-    --color8: #e67e22;
-    --color9: #95a5a6;
+    --color6: #CFF0DC;
+    
 }
 
 *{
@@ -52,7 +50,7 @@ nav {
     
     justify-content: center;
     align-items: center;
-    color: white;
+    color: var(--color2);
     font-size: 2rem;
     
 }
@@ -86,4 +84,31 @@ nav {
 .category-selected {
     background-color: var(--color3);
     color: white;
+}
+
+#modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 10rem;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+#modal-content {
+    background-color: var(--color1);
+    padding: 2rem;
+    border-radius: .5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }

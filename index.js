@@ -15,6 +15,56 @@ function SelectCategory( id )
 
 }
 
+async function PopUpModal ( id )
+{       
+    let url = `https://openapi.programming-hero.com/api/plant/${id}`;
+    let response = await fetch(url);
+    let data = await response.json();
+    let plant= data.plants;
+    console.log(data, plant);
+    let div= document.getElementById('modal');
+    div.innerHTML= '';
+    div.style.display= 'block';
+    let div1= document.createElement('div');
+    div1.style.display= 'flex';
+    div1.style.backgroundColor= 'var(--color1)';
+    div1.id = 'modal-content';
+
+
+    let div2_img = document.createElement('div');
+    div2_img.style.height= '10rem';
+    div2_img.style.backgroundImage = `url(${plant.image})`;
+    div2_img.style.backgroundSize= 'cover';
+
+    let div2_title = document.createElement('div');
+    div2_title.innerText= plant.name;
+    div2_title.classList.add('head2');
+
+    let div2_des = document.createElement('div');
+    div2_des.innerText= `Description ${plant.description}`;
+
+    let div2_price = document.createElement('div');
+    div2_price.innerText= `Price $${plant.price}`;    
+
+    let div2_category = document.createElement('div');
+    div2_category.innerText= `Category ${plant.category}`;
+    
+    let div2_close = document.createElement('button');
+    div2_close.innerText= 'Close';
+    div2_close.onclick= function() { div.style.display= 'none'; };
+    
+    
+    div1.appendChild(div2_title);
+    div1.appendChild(div2_img);
+    div1.appendChild(div2_category);
+    div1.appendChild(div2_price);
+    div1.appendChild(div2_des);
+    div1.appendChild(div2_close);
+    
+    div.appendChild(div1);
+        
+}
+
 
 async function FetchTrees(id) 
 {
@@ -35,13 +85,14 @@ async function FetchTrees(id)
         div2_img.style.height= '10rem';
         div2_img.style.backgroundImage = `url(${plant.image})`;
         div2_img.style.backgroundSize= 'cover';
+        div2_img.onclick= function() { PopUpModal(plant.id); };
 
         let div2_title = document.createElement('div');
         div2_title.innerText= plant.name;
         div2_title.classList.add('head2');
 
         let div2_des = document.createElement('div');
-        div2_des.innerText= plant.description;
+        div2_des.innerText= plant.description.substring(0, 70) + '...';
 
         let div2_price = document.createElement('div');
         div2_price.style.display= 'flex';
@@ -101,5 +152,5 @@ async function FetchCategories()
 
 
 
-FetchTrees();
+FetchTrees(999);
 FetchCategories();

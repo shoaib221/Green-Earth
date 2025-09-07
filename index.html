@@ -11,6 +11,8 @@
 
 
 <body>
+
+    
     
     <nav>
         <div>
@@ -57,21 +59,60 @@
     </div>
 
     <div id="about" >
-        <div>About The Campaign</div>
+        <div class="head-1" >About The Campaign</div>
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); height: 10rem;" >
+            <div style="height: 100%; background-image: url(./assets/about.png); background-position: center; background-size: cover;" ></div>
+            <div> 
+                <div>
+                    Green Earth is a global tree plantation initiative dedicated to fighting climate change. Since our start, we’ve planted over 500,000 trees worldwide. By joining our campaign, you help restore forests, create habitats for wildlife, and combat global warming.
+                </div>
+                <ol>
+                    <li>Restoration of natural habitats </li>
+                    <li>Improvement of air quality </li>
+                    <li>Support for local communities </li>
+                </ol>
+            </div>
+        </div>
     </div>
 
     <div id="impact" >  
-        <div> Our Impact </div>
+        <div class="head-1" > Our Impact </div>
+        <div style="display: flex; justify-content: space-around; align-items: center;" >
+            <div>
+                <div>500,000+</div>
+                <div>Trees Planted</div>
+            </div>
+            <div>
+                <div>120+</div>
+                <div>Communities Supported</div>
+            </div>
+            <div>
+                <div>50+</div>
+                <div>Countries Reached</div>
+            </div>
+        </div>
     </div>
 
     <div id="plant" >
-        Plant a Tree
+        <div class="head-1" > Plant a Tree </div>
+        <div style="display: flex; flex-direction: column;" >
+            <input type="text" id="name" placeholder="Your Name" />
+            <input type="text" id="email" placeholder="Your Email" />
+            <select id="tree-type" >
+                <option value="" disabled selected>5</option>
+                <option value="" disabled selected>5</option>
+            </select>
+            <button onclick="PlantTree()" >Plant Now</button>
+        </div>
     </div>
 
     <footer>
-        
+        © 2025 Green Earth. All Rights Reserved.
     </footer>
 
+    <div id="modal" >
+
+    </div>
 
     <script src="./index.js" ></script>
 </body>
