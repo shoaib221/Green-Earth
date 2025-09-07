@@ -3,8 +3,8 @@
     --color1: #3498db;
     --color2: #2ecc71;
     --color3: #15803D;
-    --color4: #9b59b6;
-    --color5: #f1c40f;
+    --color4: #14532D;
+    --color5: #166534;
     --color6: #1abc9c;
     --color7: #34495e;
     --color8: #e67e22;
@@ -26,7 +26,7 @@ html {
 
 body {
     height: 100%;
-    background-color: yellow;
+    background-color: white;
 }
 
 
@@ -55,4 +55,35 @@ nav {
     color: white;
     font-size: 2rem;
     
+}
+
+#grid-1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 2rem;
+    flex-grow: 1;
+}
+
+.head-1 {
+    font-size: 2rem;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.head-2 {
+    font-size: 1.5rem;
+    
+    margin: 1rem 0;
+}
+
+.category-op {
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: .2rem;
+}
+
+.category-selected {
+    background-color: var(--color3);
+    color: white;
 }
