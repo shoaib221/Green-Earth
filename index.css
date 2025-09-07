@@ -1,0 +1,58 @@
+
+:root {
+    --color1: #3498db;
+    --color2: #2ecc71;
+    --color3: #15803D;
+    --color4: #9b59b6;
+    --color5: #f1c40f;
+    --color6: #1abc9c;
+    --color7: #34495e;
+    --color8: #e67e22;
+    --color9: #95a5a6;
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0%;
+    margin: 0%;
+    border: none;
+    overflow: auto;
+}
+
+html {
+    min-height: 100vh;
+    font-size: 15px;
+}
+
+body {
+    height: 100%;
+    background-color: yellow;
+}
+
+
+nav {
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color3);
+    color: white;
+    padding: 0 2rem;
+}
+
+#banner {
+    width: 100%;
+    height: 15rem;
+    background-image: url(./assets/hero-leaf1.png), url(./assets/hero-leaf2.png);
+    background-position: left center, right center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: var(--color6);
+    
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2rem;
+    
+}
