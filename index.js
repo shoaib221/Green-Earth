@@ -11,9 +11,64 @@ function SelectCategory( id )
     let elem = document.getElementById(`category-${id}`);
     elem.classList.add('category-selected');
     FetchTrees(id);
-
-
 }
+
+function AddToCart( plant )
+{
+    alert(`Added ${plant.name} to cart.`);
+    let cart_items = document.getElementById('cart-items');
+    let cart_total = document.getElementById('cart-total');
+    let total = parseFloat(cart_total.innerText);
+    total += plant.price;
+    cart_total.innerText = total.toFixed(2);
+
+    let found = false;
+    for( let item of cart_items.children )
+    {
+        let name = item.querySelector('.name').innerText;
+        if( name.includes( plant.name ) )
+        {
+            found = true;
+            let quantity = item.querySelector('.quantity');
+            quantity.innerText = parseInt(quantity.innerText)+1;
+            break;
+        }
+    }
+
+    if( found ) return;
+
+    let div = document.createElement('div');
+    let btn = document.createElement('button');
+    btn.innerText = 'Remove';
+    btn.onclick =  function(e) { RemoveFromCart(e); };
+    
+    div.innerHTML = `
+        <div>
+        <span class='name' >${plant.name}</span> <br/>
+        $<span class='price' >${plant.price}</span>  X <span class='quantity' >1</span>
+        </div>
+        `;
+    div.appendChild(btn);
+    
+    cart_items.appendChild(div);
+    
+    
+}
+
+
+function RemoveFromCart( e )
+{
+    let btn = e.target;
+    let item = btn.parentElement;
+    let price = parseFloat( item.querySelector('.price').innerText ) * parseFloat(  item.querySelector('.quantity').innerText );
+    let cart_total = document.getElementById('cart-total');
+    cart_total.innerText = ( parseFloat(cart_total.innerText) - price ).toFixed(2);
+    item.parentElement.removeChild(item);
+    console.log(item);
+    alert('Remove from cart clicked');
+    
+}
+
 
 async function PopUpModal ( id )
 {       
@@ -112,6 +167,7 @@ async function FetchTrees(id)
         let div2_cart = document.createElement('button');
         div2_cart.innerText= 'Add to Cart';
         div2_cart.classList.add('btn-cart');
+        div2_cart.onclick= function() { AddToCart(plant); };
         
 
         div1.appendChild(div2_img);
