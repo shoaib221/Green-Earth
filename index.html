@@ -55,8 +55,8 @@
             </div>
             
         </div>
-        <div style="display: flex; gap: .5rem;" >
-            <div id="category" style="min-width: 20%;" >
+        <div style="display: flex; gap: 1rem; padding: 1rem; " >
+            <div id="category" style="min-width: 15%;" >
                 <div class="head-2" >Categories</div>
                 <div  onclick="SelectCategory(999)" class="category-op category-selected category-999" >All Trees</div>
             </div>
@@ -100,15 +100,15 @@
     <div id="impact" style="background-color: var(--color6); padding: 2rem; margin-top: 1rem;" >  
         <div class="head-1" > Our Impact </div>
         <div id="impacts" >
-            <div style="color: var(--color3); background-color: var(--color1); padding: 1rem;" >
-                <span style="font-size: 3rem; font-weight: 600;" >50,000+</span><br>
+            <div style="color: var(--color3); background-color: var(--color1); padding: 1rem; min-width: 15rem; border-radius: .5rem; text-align: center;" >
+                <span style="font-size: 3rem; font-weight: 600;" >500K+</span><br>
                 Trees Planted
             </div>
-            <div style="color: var(--color3); background-color: var(--color1); padding: 1rem;" >
+            <div style="color: var(--color3); background-color: var(--color1); padding: 1rem; min-width: 15rem; border-radius: .5rem; text-align: center;" >
                 <span style="font-size: 3rem; font-weight: 600;" >120+</span><br>
                 Communities Supported
             </div>
-            <div style="color: var(--color3); background-color: var(--color1); padding: 1rem;" >
+            <div style="color: var(--color3); background-color: var(--color1); padding: 1rem; min-width: 15rem; border-radius: .5rem; text-align: center;" >
                 <span style="font-size: 3rem; font-weight: 600;" >30+</span><br>
                 Countries Reached
                 
@@ -118,12 +118,14 @@
 
     <div id="plant"  >
         <div class="head-1" > Plant a Tree </div>
-        <div style="display: flex; flex-direction: column; width: 80%; max-width: 30rem; padding: 1rem; gap: 1rem; background-color: var(--color3);" >
-            <input type="text" style="padding: .5rem;" id="name" placeholder="Your Name" />
-            <input type="text" style="padding: .5rem;" id="email" placeholder="Your Email" />
-            <select id="tree-type" style="padding: .5rem;" >
-                <option value="" disabled selected>5</option>
-                <option value="" disabled selected>5</option>
+        <div style="display: flex; flex-direction: column; width: 80%; max-width: 30rem; padding: 1rem; gap: 1rem; background-color: var(--color3); border-radius: .5rem;" >
+            <input type="text" style="padding: .5rem; border-radius: .5rem;" id="name" placeholder="Your Name" />
+            <input type="text" style="padding: .5rem; border-radius: .5rem;" id="email" placeholder="Your Email" />
+            <select id="tree-type" style="padding: .5rem; border-radius: .5rem;" >
+                <option value=""  selected>Number Of Tress</option>
+                <option value="" >10</option>
+                <option value="" >100</option>
+                <option value="" >1000</option>
             </select>
             <button onclick="PlantTree()" class="button-1" >Donate Now</button>
         </div>
@@ -134,7 +136,25 @@
     </footer>
 
     <div id="modal" >
+    <div id="modal-content" >
+        <div class="head-2" ></div>
+        <div class="modal-photo" ></div>
+        <div  >
+            <span style="font-weight: 600;" >Category</span>
+            <span class="modal-cat" ></span>
+        </div>
+        <div  >
+            <span style="font-weight: 600;" >Price $</span>
+            <span class="modal-price" ></span>
+        </div>
 
+        <div  >
+            <span style="font-weight: 600;" >Description</span>
+            <span class="modal-desc" ></span>
+        </div>
+
+        <button class="button-2" onclick="CloseModal()" >Close</button>
+    </div>
     </div>
 
 

@@ -87,6 +87,12 @@ function RemoveFromCart( e )
     
 }
 
+function CloseModal()
+{
+    let div= document.getElementById('modal');
+    div.style.display= 'none';
+}
+
 
 async function PopUpModal ( id )
 {       
@@ -94,51 +100,32 @@ async function PopUpModal ( id )
     let response = await fetch(url);
     let data = await response.json();
     let plant= data.plants;
-    console.log(data, plant);
+
+
+    
     let div= document.getElementById('modal');
-    div.innerHTML= '';
     div.style.display= 'flex';
-    let div1= document.createElement('div');
-    div1.style.display= 'flex';
-    div1.style.backgroundColor= 'var(--color1)';
-    div1.id = 'modal-content';
 
+    let div1= div.querySelector('.head-2'); ;
+    div1.innerText= plant.name;
 
-    let div2_img = document.createElement('div');
-    div2_img.style.height= '10rem';
-    div2_img.style.backgroundImage = `url(${plant.image})`;
-    div2_img.style.backgroundSize= 'contain';
-    div2_img.style.backgroundPosition= 'center';
-    div2_img.style.backgroundRepeat= 'no-repeat';
+    div1= div.querySelector('.modal-photo');
+    div1.style.backgroundImage = `url(${plant.image})`;
+
     
+    div1= div.querySelector('.modal-desc');
+    div1.innerText = plant.description;
 
-    let div2_title = document.createElement('div');
-    div2_title.innerText= plant.name;
-    div2_title.classList.add('head2');
+    div1= div.querySelector('.modal-price');
+    div1.innerText= plant.price;
 
-    let div2_des = document.createElement('div');
-    div2_des.innerText= `Description ${plant.description}`;
-
-    let div2_price = document.createElement('div');
-    div2_price.innerText= `Price $${plant.price}`;    
-
-    let div2_category = document.createElement('div');
-    div2_category.innerText= `Category ${plant.category}`;
-    
-    let div2_close = document.createElement('button');
-    div2_close.innerText= 'Close';
-    div2_close.onclick= function() { div.style.display= 'none'; };
-    div2_close.classList.add('button-2');
+    div1 = div.querySelector('.modal-cat');
+    div1.innerText= plant.category;
     
     
-    div1.appendChild(div2_title);
-    div1.appendChild(div2_img);
-    div1.appendChild(div2_category);
-    div1.appendChild(div2_price);
-    div1.appendChild(div2_des);
-    div1.appendChild(div2_close);
     
-    div.appendChild(div1);
+    
+    
         
 }
 

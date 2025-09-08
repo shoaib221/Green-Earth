@@ -39,6 +39,29 @@ body {
 }
 
 
+/* ######################################  */
+
+#banner {
+    width: 100%;
+    padding: 1rem;
+    background-image: url(./assets/hero-leaf1.png), url(./assets/hero-leaf2.png);
+    background-position: left center, right center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: var(--color6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--color2);
+    font-size: 2rem;
+    gap: 1rem;
+    
+    text-shadow: 1px 1px var(--color6), -1px -1px var(--color6), 1px -1px var(--color6), -1px 1px var(--color6),
+        1px 0px var(--color6), -1px 0px var(--color6), 0px 1px var(--color6), 0px -1px var(--color6);
+}
+
+
 nav {
     width: 100%;
     height: 4rem;
@@ -60,28 +83,11 @@ nav {
     text-decoration: underline;
 }
 
-#banner {
-    width: 100%;
-    height: 15rem;
-    background-image: url(./assets/hero-leaf1.png), url(./assets/hero-leaf2.png);
-    background-position: left center, right center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-color: var(--color6);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: var(--color2);
-    font-size: 2rem;
-    gap: 1rem;
-}
 
 #grid-1 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
-    padding: 2rem;
     flex-grow: 1;
 }
 
@@ -95,6 +101,7 @@ nav {
     font-size: 1rem;
     font-weight: 600;
     text-align: left;
+    padding: .5rem;
 }
 
 .category-op {
@@ -129,10 +136,17 @@ nav {
     border-radius: .5rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 600px;
-    max-height: 600px;
+    
     display: flex;
     flex-direction: column;
     gap: 1rem;
+}
+
+.modal-photo {
+    height: 40vh;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #ccc;
 }
 
 #cart-items {
@@ -140,6 +154,10 @@ nav {
     flex-direction: column;
     gap: 0.5rem;
     
+}
+
+#cart {
+    min-width: 15%;
 }
 
 .cart-item {
@@ -152,6 +170,7 @@ nav {
     color: var(--color5);
     padding: .5rem;
     border-radius: 1rem;   
+    text-shadow: none;
 }
 
 .button-2 {
@@ -159,6 +178,7 @@ nav {
     color: white;
     padding: .5rem;
     border-radius: 1rem;
+    text-shadow: none;
 }
 
 .card {
@@ -177,9 +197,7 @@ nav {
     text-align: left;
 }
 
-#cart {
-    min-width: 20%;
-}
+
 
 #gallery {
     margin-left: 2rem;
@@ -208,7 +226,7 @@ nav {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 3rem;
+    margin-bottom: 5rem;
     margin-top: 3rem;
 }
 
@@ -287,7 +305,7 @@ nav {
     
     
     #banner {
-        height: 10rem;
+        
         font-size: 1.5rem;
     }
     
@@ -297,6 +315,10 @@ nav {
     
     .head-1 {
         font-size: 1.5rem;
+    }
+
+    html {
+        font-size: 12px;
     }
     
     .head-2 {
