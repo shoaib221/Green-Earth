@@ -7,6 +7,7 @@
     --color5: #166534;
     --color6: #CFF0DC;
     --color7: rgb(184, 184, 11);
+    --color8: #474747;
     
 }
 
@@ -14,8 +15,8 @@
     box-sizing: border-box;
     padding: 0%;
     margin: 0%;
-    border: none;
-    overflow: auto;
+    border: 0px;
+    
 }
 
 html {
@@ -26,6 +27,10 @@ html {
 body {
     height: 100%;
     background-color: white;
+}
+
+.text-1 {
+    color: var(--color8);
 }
 
 
@@ -108,7 +113,6 @@ nav {
     display: none;
     justify-content: center;
     align-items: center;
-    padding: 10rem;
     justify-content: center;
     align-items: center;
     z-index: 2;
@@ -120,6 +124,7 @@ nav {
     border-radius: .5rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 600px;
+    max-height: 600px;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -165,4 +170,152 @@ nav {
 
 .card div {
     text-align: left;
+}
+
+#cart {
+    min-width: 20%;
+}
+
+#gallery {
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+#impacts {
+    display: flex; 
+    justify-content: space-around; 
+    align-items: center;
+}
+
+#plant {
+    background-color: var(--color5); 
+    color: var(--color1); 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 2rem; 
+    flex-direction: column;
+    padding-bottom: 3rem;
+} 
+
+
+#about {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#about-detail {
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr); 
+    height: 20rem;
+}
+
+#mobile-category {
+    display: none;
+}
+
+@media screen and (max-width: 800px) {
+    #grid-1 {
+        grid-template-columns: 1fr;
+        padding: 0rem;
+    }
+
+    #mobile-category {
+        display: block;
+        
+    }
+
+    #mobile-category #children {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: .5rem;
+    }
+
+    #category {
+        display: none;
+    }
+
+    #cart {
+        min-width: 35%;
+    }
+
+    #about-detail {
+        height: 25rem;
+        grid-template-columns: repeat(1, 1fr); 
+        padding: 2rem;
+    }
+
+    #gallery {
+        margin-left: .5rem;
+        margin-right: .5rem;
+    }
+
+    #impacts {
+        flex-direction: column;
+        gap: .5rem;
+    }
+    
+    #pc-nav {
+        display: none;
+    }
+    
+    
+    #banner {
+        height: 10rem;
+        font-size: 1.5rem;
+    }
+    
+    .card {
+        padding: 0.5rem;
+    }
+    
+    .head-1 {
+        font-size: 1.5rem;
+    }
+    
+    .head-2 {
+        font-size: 0.9rem;
+    }
+
+    nav {
+        overflow: auto;
+        padding: 0 .5rem;
+    }
+
+    #mobile-nav-slide {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background-color: var(--color1);
+        display: none;
+        z-index: 10;
+        top: 0;
+        left: 0;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+        flex-direction: column;
+    }
+
+    #mobile-nav-slide {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background-color: var(--color1);
+        display: none;
+        z-index: 10;
+        top: 0;
+        left: 0;
+        align-items: center;
+        gap: 1rem;
+        
+        flex-direction: column;
+    }
+
+    #mobile-nav-slide div {
+        width: 80%;
+        text-align: center;
+    }
+    
 }

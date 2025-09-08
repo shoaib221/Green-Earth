@@ -13,6 +13,16 @@ function SelectCategory( id )
     FetchTrees(id);
 }
 
+function MobileNav(dest)
+{
+    if( dest !== '' ) window.location.href= `#${dest}`;
+    let mobile_nav_slide= document.getElementById('mobile-nav-slide');
+    if(mobile_nav_slide.style.display === 'flex') 
+        mobile_nav_slide.style.display= 'none'
+    else mobile_nav_slide.style.display= 'flex';
+
+}
+
 function AddToCart( plant )
 {
     alert(`Added ${plant.name} to cart.`);
@@ -80,7 +90,7 @@ async function PopUpModal ( id )
     console.log(data, plant);
     let div= document.getElementById('modal');
     div.innerHTML= '';
-    div.style.display= 'block';
+    div.style.display= 'flex';
     let div1= document.createElement('div');
     div1.style.display= 'flex';
     div1.style.backgroundColor= 'var(--color1)';
@@ -108,6 +118,7 @@ async function PopUpModal ( id )
     let div2_close = document.createElement('button');
     div2_close.innerText= 'Close';
     div2_close.onclick= function() { div.style.display= 'none'; };
+    div2_close.classList.add('button-2');
     
     
     div1.appendChild(div2_title);
@@ -149,6 +160,7 @@ async function FetchTrees(id)
 
         let div2_des = document.createElement('div');
         div2_des.innerText= plant.description.substring(0, 70) + '...';
+        div2_des.classList.add('text-1');
 
         let div2_price = document.createElement('div');
         div2_price.style.display= 'flex';
@@ -192,8 +204,21 @@ async function FetchCategories()
     let res= await fetch(url);
     let data= await res.json();
     let container= document.getElementById('category');
-    console.log(data);
+    //console.log(data);
     categories= data.categories;
+    for( let category of categories )
+    {
+        category_map[category.category_name]= category;
+        let div= document.createElement('div');
+        div.classList.add( 'category-op' );
+        div.id= `category-${category.id}`;
+        div.onclick= function() { SelectCategory(category.id); };
+        div.innerText= category.category_name;
+        container.appendChild(div);
+    }
+
+    container= document.querySelector('#mobile-category #children');
+    //console.log(data);
     for( let category of categories )
     {
         category_map[category.category_name]= category;

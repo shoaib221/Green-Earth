@@ -11,19 +11,26 @@
 
 
 <body>
-
-    
-    
     <nav>
+        <div id="mobile-nav" onclick="MobileNav()" >
+            &#9776;
+        </div>
+
+        <div id="mobile-nav-slide" >
+            <div onclick="MobileNav()" class="button-2" > Cancel </div>
+            <div class="button-2" onclick="MobileNav('about')"  >About</div>
+            <div class="button-2" onclick="MobileNav('gallery')"  >Gallery</div>
+            <div class="button-2" onclick="MobileNav('plant')"  >Plant a Tree</div>
+        </div>
+
         <div>
             Green Earth
         </div>
 
-        <div>
+        <div id="pc-nav" >
             <a href="#about" class="nav-link" >About</a>
             <a href="#gallery" class="nav-link" >Gallery</a>
             <a href="#plant" class="nav-link" >Plant a Tree</a>
-            
         </div>
 
         <div class="button-1" >
@@ -41,7 +48,14 @@
 
     <div id="gallery" >
         <div class="head-1" >Choose Your Trees</div>
-        <div style="display: flex;" >
+        <div id="mobile-category" style="min-width: 20%;" >
+            <div class="head-2" style="text-align: center;" >Categories</div>
+            <div id="children" >
+                <div id="category-999" onclick="SelectCategory(999)" class="category-op category-selected" >All Trees</div>
+            </div>
+            
+        </div>
+        <div style="display: flex; gap: .5rem;" >
             <div id="category" style="min-width: 20%;" >
                 <div class="head-2" >Categories</div>
                 <div id="category-999" onclick="SelectCategory(999)" class="category-op category-selected" >All Trees</div>
@@ -53,8 +67,8 @@
             </div>
 
 
-            <div id="cart" style="min-width: 20%;"  >
-                <div> Your Cart </div>
+            <div id="cart"  >
+                <div class="head-2" > Your Cart </div>
                 <div id='cart-items' ></div>
                 <div>
                     Total: $ <span id="cart-total" >0</span>
@@ -65,24 +79,26 @@
 
     <div id="about" >
         <div class="head-1" >About The Campaign</div>
-        <div style="display: grid; grid-template-columns: repeat(2, 1fr); height: 10rem;" >
+        <div id="about-detail" >
             <div style="height: 100%; background-image: url(./assets/about.png); background-position: center; background-size: contain; background-repeat: no-repeat;" ></div>
-            <div> 
+            <div style="color: var(--color8);" > 
                 <div>
                     Green Earth is a global tree plantation initiative dedicated to fighting climate change. Since our start, we’ve planted over 500,000 trees worldwide. By joining our campaign, you help restore forests, create habitats for wildlife, and combat global warming.
                 </div>
-                <ol>
+                <ul style="padding-left: 1rem;" >
                     <li>Restoration of natural habitats </li>
                     <li>Improvement of air quality </li>
                     <li>Support for local communities </li>
-                </ol>
+                </ul>
             </div>
         </div>
     </div>
 
-    <div id="impact" style="background-color: var(--color6);" >  
+    
+
+    <div id="impact" style="background-color: var(--color6); padding: 2rem; margin-top: 5rem;" >  
         <div class="head-1" > Our Impact </div>
-        <div style="display: flex; justify-content: space-around; align-items: center;" >
+        <div id="impacts" >
             <div style="color: var(--color3); background-color: var(--color1); padding: 1rem;" >
                 <span style="font-size: 3rem; font-weight: 600;" >50,000+</span><br>
                 Trees Planted
@@ -99,7 +115,7 @@
         </div>
     </div>
 
-    <div id="plant" style="background-color: var(--color5); color: var(--color1); display: flex; justify-content: center; align-items: center; gap: 2rem; flex-direction: column;" >
+    <div id="plant"  >
         <div class="head-1" > Plant a Tree </div>
         <div style="display: flex; flex-direction: column; width: 80%; max-width: 30rem; padding: 1rem; gap: 1rem; background-color: var(--color3);" >
             <input type="text" style="padding: .5rem;" id="name" placeholder="Your Name" />
@@ -119,6 +135,7 @@
     <div id="modal" >
 
     </div>
+
 
     <script src="./index.js" ></script>
 </body>
