@@ -40,8 +40,8 @@
 
 
     <div id="banner" >
-        <div style="font-weight: 600;" >Plant a Tree, Grow a Future</div>
-        <div style="font-size: 1.3rem;" >Join our mission to plant 1 million trees and make the earth greener for future generations </div>
+        <div style="font-weight: 600; text-align: center;" >Plant a Tree, Grow a Future</div>
+        <div style="font-size: 1.3rem; text-align: center;" >Join our mission to plant 1 million trees and make the earth greener for future generations </div>
         <div class="button-1" style="font-size: 1.3rem;" >Get Involved</div>
     </div>
 
@@ -51,14 +51,14 @@
         <div id="mobile-category" style="min-width: 20%;" >
             <div class="head-2" style="text-align: center;" >Categories</div>
             <div id="children" >
-                <div id="category-999" onclick="SelectCategory(999)" class="category-op category-selected" >All Trees</div>
+                <div  onclick="SelectCategory(999)" class="category-op category-selected category-999" >All Trees</div>
             </div>
             
         </div>
         <div style="display: flex; gap: .5rem;" >
             <div id="category" style="min-width: 20%;" >
                 <div class="head-2" >Categories</div>
-                <div id="category-999" onclick="SelectCategory(999)" class="category-op category-selected" >All Trees</div>
+                <div  onclick="SelectCategory(999)" class="category-op category-selected category-999" >All Trees</div>
             </div>
 
 
@@ -80,23 +80,24 @@
     <div id="about" >
         <div class="head-1" >About The Campaign</div>
         <div id="about-detail" >
-            <div style="height: 100%; background-image: url(./assets/about.png); background-position: center; background-size: contain; background-repeat: no-repeat;" ></div>
-            <div style="color: var(--color8);" > 
+            <div style="height:15rem; background-image: url(./assets/about.png); background-position: center; background-size: contain; background-repeat: no-repeat;" ></div>
+            <div style="color: var(--color8); display: flex; flex-direction: column; justify-content: center; align-items: center;" > 
                 <div>
                     Green Earth is a global tree plantation initiative dedicated to fighting climate change. Since our start, we’ve planted over 500,000 trees worldwide. By joining our campaign, you help restore forests, create habitats for wildlife, and combat global warming.
-                </div>
+                    <br><br>
                 <ul style="padding-left: 1rem;" >
                     <li>Restoration of natural habitats </li>
                     <li>Improvement of air quality </li>
                     <li>Support for local communities </li>
                 </ul>
+                </div>
             </div>
         </div>
     </div>
 
     
 
-    <div id="impact" style="background-color: var(--color6); padding: 2rem; margin-top: 5rem;" >  
+    <div id="impact" style="background-color: var(--color6); padding: 2rem; margin-top: 1rem;" >  
         <div class="head-1" > Our Impact </div>
         <div id="impacts" >
             <div style="color: var(--color3); background-color: var(--color1); padding: 1rem;" >

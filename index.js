@@ -3,13 +3,20 @@ let categories=[], plants=[], category_map={};
 
 function SelectCategory( id )
 {
+
     let categories= document.getElementsByClassName('category-op');
     for( let cat of categories )
     {
         cat.classList.remove('category-selected');
     }
-    let elem = document.getElementById(`category-${id}`);
-    elem.classList.add('category-selected');
+
+    let elements = document.getElementsByClassName(`category-${id}`);
+    
+    for( let elem of elements )
+    {
+        elem.classList.add('category-selected');
+    }
+
     FetchTrees(id);
 }
 
@@ -100,7 +107,10 @@ async function PopUpModal ( id )
     let div2_img = document.createElement('div');
     div2_img.style.height= '10rem';
     div2_img.style.backgroundImage = `url(${plant.image})`;
-    div2_img.style.backgroundSize= 'cover';
+    div2_img.style.backgroundSize= 'contain';
+    div2_img.style.backgroundPosition= 'center';
+    div2_img.style.backgroundRepeat= 'no-repeat';
+    
 
     let div2_title = document.createElement('div');
     div2_title.innerText= plant.name;
@@ -152,6 +162,8 @@ async function FetchTrees(id)
         div2_img.style.height= '10rem';
         div2_img.style.backgroundImage = `url(${plant.image})`;
         div2_img.style.backgroundSize= 'cover';
+        div2_img.style.backgroundPosition= 'center';
+        div2_img.style.cursor= 'pointer';
         div2_img.onclick= function() { PopUpModal(plant.id); };
 
         let div2_title = document.createElement('div');
@@ -211,7 +223,7 @@ async function FetchCategories()
         category_map[category.category_name]= category;
         let div= document.createElement('div');
         div.classList.add( 'category-op' );
-        div.id= `category-${category.id}`;
+        div.classList.add( `category-${category.id}` );
         div.onclick= function() { SelectCategory(category.id); };
         div.innerText= category.category_name;
         container.appendChild(div);
@@ -224,7 +236,7 @@ async function FetchCategories()
         category_map[category.category_name]= category;
         let div= document.createElement('div');
         div.classList.add( 'category-op' );
-        div.id= `category-${category.id}`;
+        div.classList.add( `category-${category.id}` );
         div.onclick= function() { SelectCategory(category.id); };
         div.innerText= category.category_name;
         container.appendChild(div);
