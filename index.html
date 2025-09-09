@@ -33,7 +33,7 @@
             <a href="#plant" class="nav-link" >Plant a Tree</a>
         </div>
 
-        <div class="button-1" >
+        <div class="button-1" onclick="document.location='#plant'" >
             Plant a Tree
         </div>
     </nav>
@@ -42,7 +42,7 @@
     <div id="banner" >
         <div style="font-weight: 600; text-align: center;" >Plant a Tree, Grow a Future</div>
         <div style="font-size: 1.3rem; text-align: center;" >Join our mission to plant 1 million trees and make the earth greener for future generations </div>
-        <div class="button-1" style="font-size: 1.3rem;" >Get Involved</div>
+        <div class="button-1" style="font-size: 1.3rem;" onclick="document.location='#gallery'"  >Get Involved</div>
     </div>
 
 
@@ -70,7 +70,7 @@
             <div id="cart"  >
                 <div class="head-2" > Your Cart </div>
                 <div id='cart-items' ></div>
-                <div>
+                <div style="padding: .5rem; margin-top: 1rem; font-weight: 500;" >
                     Total: $ <span id="cart-total" >0</span>
                 </div>
             </div>
@@ -80,7 +80,7 @@
     <div id="about" >
         <div class="head-1" >About The Campaign</div>
         <div id="about-detail" >
-            <div style="height:15rem; background-image: url(./assets/about.png); background-position: center; background-size: contain; background-repeat: no-repeat;" ></div>
+            <div style="height:15rem; background-image: url(./assets/about.png); background-position: center; background-size: contain; background-repeat: no-repeat; margin-bottom: 2rem;" ></div>
             <div style="color: var(--color8); display: flex; flex-direction: column; justify-content: center; align-items: center;" > 
                 <div>
                     Green Earth is a global tree plantation initiative dedicated to fighting climate change. Since our start, we’ve planted over 500,000 trees worldwide. By joining our campaign, you help restore forests, create habitats for wildlife, and combat global warming.
@@ -121,11 +121,11 @@
         <div style="display: flex; flex-direction: column; width: 80%; max-width: 30rem; padding: 1rem; gap: 1rem; background-color: var(--color3); border-radius: .5rem;" >
             <input type="text" style="padding: .5rem; border-radius: .5rem;" id="name" placeholder="Your Name" />
             <input type="text" style="padding: .5rem; border-radius: .5rem;" id="email" placeholder="Your Email" />
-            <select id="tree-type" style="padding: .5rem; border-radius: .5rem;" >
+            <select id="number" style="padding: .5rem; border-radius: .5rem;" >
                 <option value=""  selected>Number Of Tress</option>
-                <option value="" >10</option>
-                <option value="" >100</option>
-                <option value="" >1000</option>
+                <option value="10" >10</option>
+                <option value="100" >100</option>
+                <option value="1000" >1000</option>
             </select>
             <button onclick="PlantTree()" class="button-1" >Donate Now</button>
         </div>
@@ -157,6 +157,13 @@
     </div>
     </div>
 
+    <div id="loading" style="display: none;" >
+        <div style="height: 100%; width: 100%; display: flex; justify-content: center; align-items: center;" >
+            <div class="loader" >
+
+            </div>
+        </div>
+    </div>
 
     <script src="./index.js" ></script>
 </body>

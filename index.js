@@ -1,9 +1,18 @@
 
-let categories=[], plants=[], category_map={};
+let categories=[], plants=[], category_map={}, fetching_trees= false;
+
+function Loading () {
+    let div = document.getElementById('grid-1');
+    div.style.display = 'block';
+    let loading = document.getElementById('loading');
+    div.innerHTML = loading.innerHTML;
+}
+
+Loading('loading', true);
 
 function SelectCategory( id )
 {
-
+    Loading();
     let categories= document.getElementsByClassName('category-op');
     for( let cat of categories )
     {
@@ -57,12 +66,13 @@ function AddToCart( plant )
     let div = document.createElement('div');
     let btn = document.createElement('button');
     btn.innerText = 'X';
+    btn.style.color = 'var(--color8)';
     btn.onclick =  function(e) { RemoveFromCart(e); };
     
     div.innerHTML = `
         <div>
         <span class='name' >${plant.name}</span> <br/>
-        $<span class='price' >${plant.price}</span>  X <span class='quantity' >1</span>
+        $<span class='price' >${plant.price}</span>  x <span class='quantity' >1</span>
         </div>
         `;
     div.appendChild(btn);
@@ -83,7 +93,7 @@ function RemoveFromCart( e )
     cart_total.innerText = ( parseFloat(cart_total.innerText) - price ).toFixed(2);
     item.parentElement.removeChild(item);
     console.log(item);
-    alert('Remove from cart clicked');
+    //alert('Remove from cart clicked');
     
 }
 
@@ -93,9 +103,21 @@ function CloseModal()
     div.style.display= 'none';
 }
 
+function PlantTree()
+{
+    alert('Thank you for planting a tree with us! ');
+    let name= document.querySelector('#plant #name');
+    let email= document.querySelector('#plant #email');
+    let number= document.querySelector('#plant #number');
+    name.value= '';
+    email.value= '';
+    number.value= '';
+}
+
 
 async function PopUpModal ( id )
 {       
+    //alert('popup modal clicked');
     let url = `https://openapi.programming-hero.com/api/plant/${id}`;
     let response = await fetch(url);
     let data = await response.json();
@@ -138,9 +160,10 @@ async function FetchTrees(id)
     let res= await fetch(url);
     let data= await res.json();
     let container= document.getElementById('grid-1');
+    container.style.display= 'grid';
     container.innerHTML= '';
     plants= data.plants;
-    console.log(data);
+    //console.log(data);
     for( let plant of plants )
     {
         let div1= document.createElement('div');
@@ -195,6 +218,14 @@ async function FetchTrees(id)
         
         container.appendChild(div1);
     }
+
+    
+    
+    
+    
+    
+
+    
 }
 
 async function FetchCategories()

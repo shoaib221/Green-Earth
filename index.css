@@ -38,12 +38,18 @@ body {
     color: var(--color8);
 }
 
+@keyframes loadingidentifier {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(180deg); }
+    100% { transform: rotate(360deg); }
+}
+
 
 /* ######################################  */
 
 #banner {
     width: 100%;
-    padding: 1rem;
+    padding: 2rem;
     background-image: url(./assets/hero-leaf1.png), url(./assets/hero-leaf2.png);
     background-position: left center, right center;
     background-repeat: no-repeat;
@@ -95,13 +101,23 @@ nav {
     font-size: 2rem;
     text-align: center;
     margin: 1rem 0;
+    font-weight: 600;
 }
 
 .head-2 {
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 600;
     text-align: left;
     padding: .5rem;
+}
+
+.loader {
+    border: 1rem solid #535252; /* Light grey */
+    border-top: 1rem solid #ede7e7; /* Blue */
+    border-radius: 50%;
+    height: 5rem;
+    width: 5rem;
+    animation: loadingidentifier 1s  infinite linear;
 }
 
 .category-op {
@@ -163,6 +179,13 @@ nav {
 .cart-item {
     display: flex;
     justify-content: space-between;
+    color: var(--color8);
+    padding: 1rem;
+}
+
+.cart-item .name {
+    font-weight: 500;
+    color: var(--color2);
 }
 
 .button-1 {
@@ -171,6 +194,7 @@ nav {
     padding: .5rem;
     border-radius: 1rem;   
     text-shadow: none;
+    cursor:default;
 }
 
 .button-2 {
@@ -202,6 +226,7 @@ nav {
 #gallery {
     margin-left: 2rem;
     margin-right: 2rem;
+    margin-top: 4rem;
 }
 
 #impacts {
@@ -303,27 +328,15 @@ nav {
         display: none;
     }
     
-    
-    #banner {
-        
-        font-size: 1.5rem;
-    }
-    
     .card {
         padding: 0.5rem;
     }
-    
-    .head-1 {
-        font-size: 1.5rem;
-    }
 
     html {
-        font-size: 12px;
+        font-size: 11px;
     }
     
-    .head-2 {
-        font-size: 0.9rem;
-    }
+    
 
     nav {
         overflow: auto;
